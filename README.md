@@ -1,6 +1,6 @@
 # Project Overview
 
-## Lip Sync For Your Life
+## Lip Sync For Your Life!
 
 ## Project Description
 
