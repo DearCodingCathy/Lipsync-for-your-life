@@ -58,19 +58,22 @@ https://wireframe.cc/pro/pp/ef62ce6d7349633
 
 #### MVP 
 
-- Start Game page
-- Display Lip sync song and question
-- Combine two api's to display name and picture
+- Use API
+- Display competing queens names
+- Display Lip sync song sang
+- Display winner
 - Render data on page 
-- Allow user to choose winner
-- Record User response and keep score 
-- Display if the answer is right or wrong
-- Add New game reset functionality
-- End of game page
 
 #### PostMVP  
 
-- Add second API
+- Add second API to render picture
+- Add game functionality
+- Start Game page
+- End of game page
+- Display if the answer is right or wrong
+- Add New game reset functionality
+- Allow user to choose winner
+- Record User response and keep score 
 - Use local storage to save user answers and score?
 - Multi-player functionality
 - Add different drag race categories
@@ -96,16 +99,16 @@ https://wireframe.cc/pro/pp/ef62ce6d7349633
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| HTML Base | H | 2hrs| 0hrs | 0hrs |
-| Working with API | H | 3hrs| 0hrs | 0hrs |
-| Working with 2nd API | H | 3hrs| 0hrs | 0hrs |
-| Adding All JS info and eventlisteners | H | 3hrs| 0hrs | 0hrs |
+| HTML Base | H | 4hrs| 0hrs | 0hrs |
+| Working with API | H | 4hrs| 0hrs | 0hrs |
+| Working with 2nd API | H | 4hrs| 0hrs | 0hrs |
+| Adding All JS info and eventlisteners | H | 4hrs| 0hrs | 0hrs |
 | Record User Answers - right or wrong | H | 4hrs| 0hrs | 0hrs |
-| Keep score  | H | 3hrs| 0hrs | 0hrs |
-| Display End of game result & replay option | H | 3hrs| 0hrs | 0hrs |
-| CSS Updates| H | 2hrs| 0hrs | 0hrs |
+| Keep score  | H | 4hrs| 0hrs | 0hrs |
+| Display End of game result & replay option | H | 4hrs| 0hrs | 0hrs |
+| CSS Updates| H | 4hrs| 0hrs | 0hrs |
 | Make if Fancy!! | H | 8hrs| 0hrs | 0hrs |
-| Total | H | 23hrs| 0hrs | 0hrs |
+| Total | H | 40hrs| 0hrs | 0hrs |
 
 ## Code Snippet
 
