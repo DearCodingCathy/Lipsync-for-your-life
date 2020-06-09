@@ -106,6 +106,7 @@ https://wireframe.cc/pro/pp/ef62ce6d7349633
 | Keep score  | H | 3hrs| 0hrs | 0hrs |
 | Display End of game result & replay option | H | 3hrs| 0hrs | 0hrs |
 | CSS Updates| H | 2hrs| 0hrs | 0hrs |
+| Make if Fancy!! | H | 8hrs| 0hrs | 0hrs |
 | Total | H | 23hrs| 0hrs | 0hrs |
 
 ## Code Snippet
