@@ -1,32 +1,62 @@
+
+// Grab everything!!
 let header = document.querySelector('.header')
 let right = document.querySelector('.queen-right')
 let left = document.querySelector('.queen-left')
 let question = document.querySelector('.question-middle')
-let button = document.querySelector('.randomizer')
+let startButton = document.querySelector('.start-btn')
+let nextButton = document.querySelector('.next-btn')
+const questionContainer = document.querySelector('.question-section')
+
+// Global Variables 
+let shuffledQuestions;
+let currentQuestionIndex;
+let counter = 0
+
+//Add event listeners 
+startButton.addEventListener('click', startGame)
+// nextButton.addEventListener('click', () => {
+//   currentQuestionIndex++
+//   setNextQuestion()
+// })
+
 
 
 
 // API call for lipsync info
 const getQueens = async () => {
   
-  button.addEventListener('click', getQueens)
   
   try {
     
     const url = "http://www.nokeynoshade.party/api/lipsyncs"
     const response = await axios.get(url)
-    console.log(response.data)
+    // console.log(response.data)
 
     let songs = response.data
     
-    songs.map((song) => {
+    let song = songs[0]
       question.innerHTML += `
       <p>${song.name} by ${song.artist}</p>
       `
+      let queens = song.queens
+      // console.log(queens)
+      let queen1 = song.queens[0]
+      let queen2 = song.queens[1]
+      right.innerHTML += `
+      <p>${queen1.name}</p>
+      <p>${queen1.won}</p>`
 
-      let queens = response.data[0].queens
-      console.log(queens)
-    })
+      left.innerHTML += `
+      <p>${queen2.name}</p>
+      ${queen2.won}`
+
+      // questionArr.push(`${song.name} by ${song.artist}`)
+      // // console.log(questionArr)
+      // queensArr.push(queens)
+      // console.log(queensArr)
+
+  
 
 
   } catch (error) {
@@ -36,6 +66,165 @@ const getQueens = async () => {
 getQueens()
 
 
+async function nextQuestion(counter) {
+  const url = "http://www.nokeynoshade.party/api/lipsyncs"
+    const response = await axios.get(url)
+
+    let songs = response.data
+  let song = songs[counter]
+  console.log(song)
+  question.innerHTML = `
+      <p>${song.name} by ${song.artist}</p>
+      `
+      let queens = song.queens
+      // console.log(queens)
+      let queen1 = song.queens[0]
+      let queen2 = song.queens[1]
+      right.innerHTML = `
+      <p>${queen1.name}</p>
+      <p>${queen1.won}</p>`
+
+      left.innerHTML = `
+      <p>${queen2.name}</p>
+      ${queen2.won}`
+  
+}
+
+nextButton.addEventListener('click', () => {
+  counter += 1
+  nextQuestion(counter)
+
+})
+
+
+function startGame() {
+  // console.log('Started!')
+    startButton.classList.add('hide')
+    // shuffledQuestions = questionArr.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    questionContainer.classList.remove('hide')
+    // setNextQuestion()
+  }
+  
+  // function setNextQuestion() {
+  //   reset ()
+  //   showQuestion(shuffledQuestions[currentQuestionIndex])
+  // }
+  
+  // function showQuestion(question) {
+  //   question.innerText = question.question
+  //   question.answers.forEach(answer => {
+  //     const button = document.createElement('button')
+  //     button.innerText = answer.text
+  //     button.classList.add('btn')
+  //     if (answer.correct) {
+  //       button.dataset.correct = answer.correct
+  //     }
+  //     button.addEventListener('click', selectAnswer)
+  //     answerButtonElement.appendChild(button)
+  
+  //   })
+  // }
+  
+  // function reset() {
+  //   clearStatusClass(document.body)
+  //   while (answerButtonsElement, firstChild) {
+  //     answerButtonsElement.removeChild
+  //     (answerButtonsElement.firstChild)
+  //   }
+  // }
+  
+  // function selectAnswer(e) {
+  //   const selectedButton = e.target
+  //   const correct = selectedButton.dataset.correct
+  //   setStatusClass(document.body, correct)
+  //   Array.from(answerButtonElement.children).forEach(button => {
+  //     setStatusClass(button, button.dataset.correct)
+  //   })
+    // if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    //   nextButton.classList.remove('hide')
+    // } esle {
+    //   startButton.innerText = 'Replay'
+    //   startButton.classList.remove('hide')
+    // }
+  
+  // }
+  
+  // function setStatusClass(element, correct) {
+  //   clearStatusClass(element)
+  //   if (correct) {
+  //     element.classList.add('correct')
+  //   } else {
+  //     element.classList.add('wrong')
+  //   }
+  // }
+  
+  // function clearStatusClass(element) {
+  //   element.classList.remove('correct')
+  //   element.classList.remover('wrong')
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// button.addEventListener('click', getQueens)
+
+// function getRandomqueens() {
+  
+//   let songs = response.data
+
+//     songs.map((song) => {
+//     question.innerHTML += `
+//     <p>${song.name} by ${song.artist}</p>
+//     `
+//     let queens = song.queens
+//     // console.log(queens)
+//     let queen1 = song.queens[0]
+//     let queen2 = song.queens[1]
+//     right.innerHTML += `
+//     <p>${queen1.name}</p>`
+
+//     left.innerHTML += `
+//     <p>${queen2.name}</p>`
+
+//   })
+
+// }
+// getRandomqueens()
+
+// const allSyncs =
 
 
 
