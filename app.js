@@ -15,15 +15,12 @@ let counter = 0
 
 //Add event listeners 
 startButton.addEventListener('click', startGame)
-// nextButton.addEventListener('click', () => {
-//   currentQuestionIndex++
-//   setNextQuestion()
-// })
 
 
 
 
-// API call for lipsync info
+
+// API CALL for lipsync info
 const getQueens = async () => {
   
   
@@ -55,17 +52,13 @@ const getQueens = async () => {
       // // console.log(questionArr)
       // queensArr.push(queens)
       // console.log(queensArr)
-
-  
-
-
   } catch (error) {
     console.log(`Here is your error ${error}`)
   }
 }
 getQueens()
 
-
+// FUNCTION FOR NEXT QUESTION
 async function nextQuestion(counter) {
   const url = "http://www.nokeynoshade.party/api/lipsyncs"
     const response = await axios.get(url)
@@ -90,26 +83,19 @@ async function nextQuestion(counter) {
   
 }
 
+// EVENT LISTENER FOR NEXT BUTTON
 nextButton.addEventListener('click', () => {
   counter += 1
   nextQuestion(counter)
-
 })
 
 
 function startGame() {
   // console.log('Started!')
     startButton.classList.add('hide')
-    // shuffledQuestions = questionArr.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
     questionContainer.classList.remove('hide')
-    // setNextQuestion()
   }
   
-  // function setNextQuestion() {
-  //   reset ()
-  //   showQuestion(shuffledQuestions[currentQuestionIndex])
-  // }
   
   // function showQuestion(question) {
   //   question.innerText = question.question
@@ -141,7 +127,7 @@ function startGame() {
   //   Array.from(answerButtonElement.children).forEach(button => {
   //     setStatusClass(button, button.dataset.correct)
   //   })
-    // if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    // if (song.length > 20) {
     //   nextButton.classList.remove('hide')
     // } esle {
     //   startButton.innerText = 'Replay'
