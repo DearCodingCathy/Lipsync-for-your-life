@@ -1,11 +1,15 @@
 let header = document.querySelector('.header')
-let right = document.querySelector('#queen-right')
-let left = document.querySelector('#queen-left')
-let question = document.querySelector('#question')
+let right = document.querySelector('.queen-right')
+let left = document.querySelector('.queen-left')
+let question = document.querySelector('.question-middle')
 let button = document.querySelector('.randomizer')
+
+
 
 // API call for lipsync info
 const getQueens = async () => {
+  
+  button.addEventListener('click', getQueens)
   
   try {
     
@@ -14,13 +18,16 @@ const getQueens = async () => {
     console.log(response.data)
 
     let songs = response.data
-
+    
     songs.map((song) => {
       question.innerHTML += `
-      <p>${song.name}</p>
-      <p>${song.artist}</p>
+      <p>${song.name} by ${song.artist}</p>
       `
+
+      let queens = response.data[0].queens
+      console.log(queens)
     })
+
 
   } catch (error) {
     console.log(`Here is your error ${error}`)
