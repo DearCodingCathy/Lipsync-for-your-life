@@ -7,22 +7,21 @@ let question = document.querySelector('.question-middle')
 let startButton = document.querySelector('.start-btn')
 let nextButton = document.querySelector('.next-btn')
 const questionContainer = document.querySelector('.question-section')
+let answerButtonsElement = document.getElementsByClassName('.answer-btn')
+// console.log(answerButtonsElement)
 
 // Global Variables 
 let shuffledQuestions;
 let currentQuestionIndex;
 let counter = 0
+let availableSongs = []
 
 //Add event listeners 
 startButton.addEventListener('click', startGame)
 
 
-
-
-
 // API CALL for lipsync info
 const getQueens = async () => {
-  
   
   try {
     
@@ -47,11 +46,7 @@ const getQueens = async () => {
       left.innerHTML += `
       <p>${queen2.name}</p>
       ${queen2.won}`
-
-      // questionArr.push(`${song.name} by ${song.artist}`)
-      // // console.log(questionArr)
-      // queensArr.push(queens)
-      // console.log(queensArr)
+    
   } catch (error) {
     console.log(`Here is your error ${error}`)
   }
@@ -66,6 +61,7 @@ async function nextQuestion(counter) {
     let songs = response.data
   let song = songs[counter]
   console.log(song)
+
   question.innerHTML = `
       <p>${song.name} by ${song.artist}</p>
       `
@@ -73,7 +69,8 @@ async function nextQuestion(counter) {
       // console.log(queens)
       let queen1 = song.queens[0]
       let queen2 = song.queens[1]
-      right.innerHTML = `
+      
+  right.innerHTML = `
       <p>${queen1.name}</p>
       <p>${queen1.won}</p>`
 
@@ -94,16 +91,13 @@ nextButton.addEventListener('click', () => {
   nextQuestion(counter)
 })
 
-
+// Fuction to start game & hide start button
 function startGame() {
   // console.log('Started!')
     startButton.classList.add('hide')
     questionContainer.classList.remove('hide')
   }
   
-
-
-
 
 
   
@@ -129,11 +123,28 @@ function startGame() {
   //     (answerButtonsElement.firstChild)
   //   }
   // }
+
+
+  answerButtonsElement.forEach(button => {
+    button.addEventListener('click', e => {
+
+    })
+  });
   
-  // function selectAnswer(e) {
-  //   const selectedButton = e.target
-  //   const correct = selectedButton.dataset.correct
-  //   setStatusClass(document.body, correct)
+  function selectAnswer(e) {
+    const selectedButton = e.target
+    const button1 = document.createElement('button')
+    const button2 = document.createElement('button')
+    right.innerHTML = button1
+    left.innerHTML = button2
+    button1.classList.add('answer-btn')
+    button2.classList.add('answer-btn')
+    
+    // const correct = selectedButton.dataset.correct
+    // if (selectedButton === queen1.won === true) {
+    //   setStatusClass(document.body, correct)
+    }
+    
   //   Array.from(answerButtonElement.children).forEach(button => {
   //     setStatusClass(button, button.dataset.correct)
   //   })
@@ -167,71 +178,13 @@ function startGame() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// button.addEventListener('click', getQueens)
-
-// function getRandomqueens() {
-  
-//   let songs = response.data
-
-//     songs.map((song) => {
-//     question.innerHTML += `
-//     <p>${song.name} by ${song.artist}</p>
-//     `
-//     let queens = song.queens
-//     // console.log(queens)
-//     let queen1 = song.queens[0]
-//     let queen2 = song.queens[1]
-//     right.innerHTML += `
-//     <p>${queen1.name}</p>`
-
-//     left.innerHTML += `
-//     <p>${queen2.name}</p>`
-
-//   })
-
-// }
-// getRandomqueens()
-
-// const allSyncs =
-
-
-
-// API call for queens imgs
+// 2nd API CALL FOR QUEENS IMGS
 // const getQueensimg = async () => {
 
 //   try {
 //     const url2 = "http://www.nokeynoshade.party/api/seasons"
 //     const res = await axios.get(url2)
 //     console.log(res.data)
-
 
 //   } catch (error) {
 //     console.log(`This is your error ${error}`)
