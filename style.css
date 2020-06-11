@@ -4,6 +4,7 @@
   border: 1px solid black;
   /* border-radius: 5px; */
   box-shadow: 0 0 10px 2px;
+  margin-top: 50px;
 }
 
 .fb-item {
@@ -22,6 +23,13 @@
   flex-grow: 1;
   
 }
+.queen-right:hover {
+  box-shadow: 0 1.4rem 2rem .5rem;
+}
+.queen-left:hover {
+  box-shadow: 0 1.4rem 2rem .5rem;
+}
+
 .queen-left {
   min-height: 100px;
   flex-grow: 1;
@@ -29,6 +37,9 @@
 }
 h1 {
   text-align: center;
+  font-size: 50px;
+  margin-top: 20px;
+  padding: 20px;
 }
 
 :root {
@@ -40,6 +51,9 @@ h1 {
 body {
   --hue: var(--hue-neutral);
   background-color: hsl(var(--hue), 100%, 20%);
+  /* background-image: url('https://i.imgur.com/2JHWRvV.jpg');
+  background-repeat: no-repeat;
+  background-size: inherit; */
 }
 
 body.correct {
@@ -81,8 +95,6 @@ outline: none;
   font-weight: bold;
   /* padding: 10px 20px; */
 }
-
-
 
 .hide {
   display: none;

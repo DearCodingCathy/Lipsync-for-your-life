@@ -85,7 +85,12 @@ async function nextQuestion(counter) {
 
 // EVENT LISTENER FOR NEXT BUTTON
 nextButton.addEventListener('click', () => {
-  counter += 1
+  // if (song.length < 20) {
+    counter += 1
+  // } else {
+  //   startButton.innerText = 'Replay'
+  //   startButton.classList.remove('hide')
+  // }
   nextQuestion(counter)
 })
 
@@ -96,6 +101,11 @@ function startGame() {
     questionContainer.classList.remove('hide')
   }
   
+
+
+
+
+
   
   // function showQuestion(question) {
   //   question.innerText = question.question
