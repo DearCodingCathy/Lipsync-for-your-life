@@ -84,16 +84,16 @@ async function nextQuestion(counter) {
 
   // }
 
-  left.addEventListener('click', () => {
-    // console.log('click working! ')
-    // if (queen1.won === true) {
-    // }
-    setInterval(() => {element.classList.add('correct'); }, 10);
-  })
+  // left.addEventListener('click', () => {
+  //   // console.log('click working! ')
+  //   // if (queen1.won === true) {
+  //   // }
+  //   setInterval(() => {element.classList.add('correct'); }, 10);
+  // })
 
-  right.addEventListener('click', () => {
-    setInterval(() => { element.classList.add('wrong'); }, 10);
-  })
+  // right.addEventListener('click', () => {
+  //   setInterval(() => { element.classList.add('wrong'); }, 10);
+  // })
 
   
   right.innerHTML = ` 
@@ -107,6 +107,18 @@ async function nextQuestion(counter) {
       // ${queen2.won}
   
 }
+
+// TRYING TO FIGURE OUT THE RIGHT PLACE TO PUT EVENT LISTENERS
+  left.addEventListener('click', () => {
+    element.classList.add('correct')
+  })
+  right.addEventListener('click', () => {
+    element.classList.add('wrong')
+  })
+
+    
+
+
 
 function clearStatusClass(element) {
     element.classList.remove('correct')
