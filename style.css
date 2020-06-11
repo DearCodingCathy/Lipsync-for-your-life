@@ -1,5 +1,5 @@
 .question-section {
-  height: 500px;
+  height: 400px;
   display: flex;
   border: 1px solid black;
   /* border-radius: 5px; */
@@ -51,6 +51,7 @@ h1 {
 body {
   --hue: var(--hue-neutral);
   background-color: hsl(var(--hue), 100%, 20%);
+  font-family: 'Berkshire Swash', cursive;
   /* background-image: url('https://i.imgur.com/2JHWRvV.jpg');
   background-repeat: no-repeat;
   background-size: inherit; */
@@ -100,12 +101,19 @@ outline: none;
   display: none;
 }
 
+.queen-info {
+  font-size: 30px;
+  padding: 100px 0px 20px 10px;
+  }
+
 footer{
   display: flex;
   justify-content: flex-end;
+  font-size: 12px;
 }
 
 .footer-info {
   display: inline;
   padding: 100px 10px;
 }
+

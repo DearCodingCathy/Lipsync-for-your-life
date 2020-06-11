@@ -8,13 +8,15 @@ let startButton = document.querySelector('.start-btn')
 let nextButton = document.querySelector('.next-btn')
 const questionContainer = document.querySelector('.question-section')
 let answerButtonsElement = document.getElementsByClassName('.answer-btn')
+let element = document.querySelector('body')
 // console.log(answerButtonsElement)
 
 // Global Variables 
 let shuffledQuestions;
 let currentQuestionIndex;
 let counter = 0
-let availableSongs = []
+// let availableSongs = []
+let queensResult;
 
 //Add event listeners 
 startButton.addEventListener('click', startGame)
@@ -27,25 +29,27 @@ const getQueens = async () => {
     
     const url = "http://www.nokeynoshade.party/api/lipsyncs"
     const response = await axios.get(url)
-    // console.log(response.data)
+    console.log(response.data)
+    queensResult = response.data
+    return response.data
 
-    let songs = response.data
+    // let songs = response.data
     
-    let song = songs[0]
-      question.innerHTML += `
-      <p>${song.name} by ${song.artist}</p>
-      `
-      let queens = song.queens
-      // console.log(queens)
-      let queen1 = song.queens[0]
-      let queen2 = song.queens[1]
-      right.innerHTML += `
-      <p>${queen1.name}</p>
-      <p>${queen1.won}</p>`
+    // let song = songs[0]
+    //   question.innerHTML += `
+    //   <p>${song.name} by ${song.artist}</p>
+    //   `
+    //   let queens = song.queens
+    //   // console.log(queens)
+    //   let queen1 = song.queens[0]
+    //   let queen2 = song.queens[1]
+    //   right.innerHTML += `
+    //   <p>${queen1.name}</p>
+    //   <p>${queen1.won}</p>`
 
-      left.innerHTML += `
-      <p>${queen2.name}</p>
-      ${queen2.won}`
+    //   left.innerHTML += `
+    //   <p>${queen2.name}</p>
+    //   ${queen2.won}`
     
   } catch (error) {
     console.log(`Here is your error ${error}`)
@@ -55,30 +59,60 @@ getQueens()
 
 // FUNCTION FOR NEXT QUESTION
 async function nextQuestion(counter) {
-  const url = "http://www.nokeynoshade.party/api/lipsyncs"
-    const response = await axios.get(url)
+  // const url = "http://www.nokeynoshade.party/api/lipsyncs"
+  //   const response = await axios.get(url)
 
-    let songs = response.data
+    let songs = queensResult
   let song = songs[counter]
   console.log(song)
 
   question.innerHTML = `
-      <p>${song.name} by ${song.artist}</p>
+      <p class= 'queen-info'>${song.name} by ${song.artist}</p>
       `
       let queens = song.queens
       // console.log(queens)
       let queen1 = song.queens[0]
       let queen2 = song.queens[1]
       
-  right.innerHTML = `
-      <p>${queen1.name}</p>
-      <p>${queen1.won}</p>`
+  
+      
+  
+  // if (queen1.won === true || queen2.won === true) {
+  //   answerButton.addEventListener('click', () => {
+  //     console.log('You are correct')
+  //   })
 
-      left.innerHTML = `
-      <p>${queen2.name}</p>
-      ${queen2.won}`
+  // }
+
+  left.addEventListener('click', () => {
+    // console.log('click working! ')
+    // if (queen1.won === true) {
+    // }
+    setInterval(() => {element.classList.add('correct'); }, 10);
+  })
+
+  right.addEventListener('click', () => {
+    setInterval(() => { element.classList.add('wrong'); }, 10);
+  })
+
+  
+  right.innerHTML = ` 
+      <p class= 'queen-info'>${queen1.name}</p>
+      `
+      // ${queen1.won}
+
+  left.innerHTML = `
+      <p class= 'queen-info'>${queen2.name}</p>
+      `
+      // ${queen2.won}
   
 }
+
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remover('wrong')
+  }
+
 
 // EVENT LISTENER FOR NEXT BUTTON
 nextButton.addEventListener('click', () => {
@@ -95,9 +129,9 @@ nextButton.addEventListener('click', () => {
 function startGame() {
   // console.log('Started!')
     startButton.classList.add('hide')
-    questionContainer.classList.remove('hide')
-  }
-  
+  questionContainer.classList.remove('hide')
+  nextQuestion(0)
+}
 
 
   
@@ -125,25 +159,25 @@ function startGame() {
   // }
 
 
-  answerButtonsElement.forEach(button => {
-    button.addEventListener('click', e => {
+  // answerButtonsElement.forEach(button => {
+  //   button.addEventListener('click', e => {
 
-    })
-  });
+  //   })
+  // });
   
-  function selectAnswer(e) {
-    const selectedButton = e.target
-    const button1 = document.createElement('button')
-    const button2 = document.createElement('button')
-    right.innerHTML = button1
-    left.innerHTML = button2
-    button1.classList.add('answer-btn')
-    button2.classList.add('answer-btn')
+  // function selectAnswer(e) {
+  //   const selectedButton = e.target
+  //   const button1 = document.createElement('button')
+  //   const button2 = document.createElement('button')
+  //   right.innerHTML = button1
+  //   left.innerHTML = button2
+  //   button1.classList.add('answer-btn')
+  //   button2.classList.add('answer-btn')
     
     // const correct = selectedButton.dataset.correct
     // if (selectedButton === queen1.won === true) {
     //   setStatusClass(document.body, correct)
-    }
+    // }
     
   //   Array.from(answerButtonElement.children).forEach(button => {
   //     setStatusClass(button, button.dataset.correct)
