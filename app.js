@@ -1,5 +1,5 @@
 
-// Grab everything!!
+// GRAB EVERYTHING!!
 let header = document.querySelector('.header')
 let right = document.querySelector('.queen-right')
 let left = document.querySelector('.queen-left')
@@ -9,19 +9,15 @@ let nextButton = document.querySelector('.next-btn')
 const questionContainer = document.querySelector('.question-section')
 let answerButtonsElement = document.getElementsByClassName('.answer-btn')
 let element = document.querySelector('body')
-// console.log(answerButtonsElement)
 
 // Global Variables 
 let shuffledQuestions;
 let currentQuestionIndex;
 let counter = 0
-// let availableSongs = []
 let queensResult;
 
 //Add event listeners 
 startButton.addEventListener('click', startGame)
-
-
 
 // API CALL for lipsync info
 const getQueens = async () => {
@@ -65,17 +61,12 @@ async function nextQuestion(counter) {
       let queen2 = song.queens[1]
       
   let queen1img = res1.data.image_url
-  // queen1img.style.width = "100%"
-  // queen1img.style.height = "200px"
   let queen2img = res2.data.image_url
-  // queen2img.style.width = "100%"
-  // queen2img.style.height = "200px"
 
   right.innerHTML = ` 
       <p class= 'queen-info'>${queen1.name}</p>
       <img class= queen-img src=${queen1img}>
       `
-
   left.innerHTML = `
       <p class= 'queen-info'>${queen2.name}</p>
       <img class= queen-img src=${queen2img}>
@@ -104,7 +95,7 @@ nextButton.addEventListener('click', () => {
     questionContainer.classList.add('hide')
     nextButton.classList.add('hide')
   }
-  // Catherine add box remover later
+// remove classlist of body
   element.classList.remove('wrong')
   element.classList.remove('correct')
   nextQuestion(counter)

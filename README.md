@@ -84,7 +84,7 @@ https://wireframe.cc/pro/pp/ef62ce6d7349633
 |June 8| Project Prompt | Complete
 |June 9| Wireframes / Priority Matrix / Timeframes | Complete
 |June 9| Start of Core Application Structure (HTML, CSS, etc.) | Complete
-|June 9| Initial HTML & rendering data | Incomplete
+|June 9| Initial HTML & rendering data | Complete
 |June 10| Core Application Structure (HTML, CSS, etc.) | Complete
 |June 11| Initial Clickable Model  | Complete
 |June 12| MVP | Complete
