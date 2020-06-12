@@ -21,8 +21,6 @@ let queensResult;
 //Add event listeners 
 startButton.addEventListener('click', startGame)
 
-//TO TRY AND REMOVE NEXT FROM START
-nextButton.classList.add('hide')
 
 // API CALL for lipsync info
 const getQueens = async () => {
@@ -91,7 +89,6 @@ async function nextQuestion(counter) {
     element.classList.add('wrong')
   })
 
-    
 
 
 
@@ -103,6 +100,7 @@ nextButton.addEventListener('click', () => {
     startButton.innerText = 'Replay'
     startButton.classList.remove('hide')
     questionContainer.classList.add('hide')
+    nextButton.classList.add('hide')
   }
   // Catherine add box remover later
   element.classList.remove('wrong')
