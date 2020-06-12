@@ -22,6 +22,7 @@ let queensResult;
 startButton.addEventListener('click', startGame)
 
 
+
 // API CALL for lipsync info
 const getQueens = async () => {
   
@@ -55,7 +56,8 @@ async function nextQuestion(counter) {
   // console.log(res1, res2)
   
   question.innerHTML = `
-      <p class= 'queen-info2'>${song.name} by ${song.artist}</p>
+  <p class= 'queen-questions'>Which queen won the lip sync battle featuring:</p>    
+  <p class='queen-info2'>${song.name} by ${song.artist}?</p>
       `
       let queens = song.queens
       // console.log(queens)
