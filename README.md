@@ -84,11 +84,11 @@ https://wireframe.cc/pro/pp/ef62ce6d7349633
 |---|---| ---|
 |June 8| Project Prompt | Complete
 |June 9| Wireframes / Priority Matrix / Timeframes | Complete
-|June 9| Start of Core Application Structure (HTML, CSS, etc.) | Incomplete
+|June 9| Start of Core Application Structure (HTML, CSS, etc.) | Complete
 |June 9| Initial HTML & rendering data | Incomplete
-|June 10| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|June 11| Initial Clickable Model  | Incomplete
-|June 12| MVP | Incomplete
+|June 10| Core Application Structure (HTML, CSS, etc.) | Complete
+|June 11| Initial Clickable Model  | Complete
+|June 12| MVP | Complete
 |June 15| Present | Incomplete
 
 ## Priority Matrix
@@ -99,29 +99,29 @@ https://wireframe.cc/pro/pp/ef62ce6d7349633
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| HTML Base | H | 4hrs| 0hrs | 0hrs |
-| Working with API | H | 4hrs| 0hrs | 0hrs |
-| Working with 2nd API | H | 4hrs| 0hrs | 0hrs |
-| Adding All JS info and eventlisteners | H | 4hrs| 0hrs | 0hrs |
-| Record User Answers - right or wrong | H | 4hrs| 0hrs | 0hrs |
+| HTML Base | H | 4hrs| 3hrs | 3hrs |
+| Working with API | H | 4hrs| 4hrs | 4hrs |
+| Working with 2nd API | H | 4hrs| 1.5hrs | 1.5hrs |
+| Adding All JS info and eventlisteners | H | 4hrs| 4hrs | 4hrs |
+| Display User Answers - right or wrong | H | 4hrs| 3hrs | 3hrs |
 | Keep score  | H | 4hrs| 0hrs | 0hrs |
 | Display End of game result & replay option | H | 4hrs| 0hrs | 0hrs |
-| CSS Updates| H | 4hrs| 0hrs | 0hrs |
-| Make if Fancy!! | H | 8hrs| 0hrs | 0hrs |
+| CSS Updates| H | 4hrs| 3.5hrs | 3.5hrs |
+| Make if Fancy!! | H | 8hrs| 3hrs | 0hrs |
 | Total | H | 40hrs| 0hrs | 0hrs |
 
 ## Code Snippet
-
-## Catherine Update this later! 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+This is my start game function. I am proud of this function because I was able to figure out how to show my start and end page info, without have to create an end HTML page.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+function startGame() {
+  // console.log('Started!')
+    startButton.classList.add('hide')
+  questionContainer.classList.remove('hide')
+  nextQuestion(0)
+  nextButton.classList.remove('hide')
 }
 ```
 
 ## Change Log
-
-## Catherine Update this if there are any changes! 
- Use this section to document what changes were made and the reasoning behind those changes.  
+ N/A
