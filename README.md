@@ -63,16 +63,15 @@ https://wireframe.cc/pro/pp/ef62ce6d7349633
 - Display Lip sync song sang
 - Display winner
 - Render data on page 
-
-#### PostMVP  
-
 - Add second API to render picture
-- Add game functionality
 - Start Game page
 - End of game page
-- Display if the answer is right or wrong
-- Add New game reset functionality
+- Display to user if the answer is right or wrong
 - Allow user to choose winner
+- Add replay game functionality
+
+#### PostMVP  
+- Add game functionality
 - Record User response and keep score 
 - Use local storage to save user answers and score?
 - Multi-player functionality
