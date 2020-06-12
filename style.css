@@ -103,6 +103,11 @@ outline: none;
 
 .queen-info {
   font-size: 30px;
+  padding: 0px 0px 20px 10px;
+  }
+
+.queen-info2 {
+  font-size: 30px;
   padding: 100px 0px 20px 10px;
   }
 
@@ -115,5 +120,9 @@ footer{
 .footer-info {
   display: inline;
   padding: 100px 10px;
+}
+
+.queen-img {
+  width: 150px;
 }
 

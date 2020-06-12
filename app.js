@@ -21,6 +21,8 @@ let queensResult;
 //Add event listeners 
 startButton.addEventListener('click', startGame)
 
+//TO TRY AND REMOVE NEXT FROM START
+nextButton.classList.add('hide')
 
 // API CALL for lipsync info
 const getQueens = async () => {
@@ -32,24 +34,6 @@ const getQueens = async () => {
     console.log(response.data)
     queensResult = response.data
     return response.data
-
-    // let songs = response.data
-    
-    // let song = songs[0]
-    //   question.innerHTML += `
-    //   <p>${song.name} by ${song.artist}</p>
-    //   `
-    //   let queens = song.queens
-    //   // console.log(queens)
-    //   let queen1 = song.queens[0]
-    //   let queen2 = song.queens[1]
-    //   right.innerHTML += `
-    //   <p>${queen1.name}</p>
-    //   <p>${queen1.won}</p>`
-
-    //   left.innerHTML += `
-    //   <p>${queen2.name}</p>
-    //   ${queen2.won}`
     
   } catch (error) {
     console.log(`Here is your error ${error}`)
@@ -57,56 +41,43 @@ const getQueens = async () => {
 }
 getQueens()
 
-// FUNCTION FOR NEXT QUESTION
+// FUNCTION FOR NEXT QUESTION & API CALL FOR IMAGES
 async function nextQuestion(counter) {
-  // const url = "http://www.nokeynoshade.party/api/lipsyncs"
-  //   const response = await axios.get(url)
-
+  
     let songs = queensResult
   let song = songs[counter]
   console.log(song)
 
+  const imgcall1 = `http://www.nokeynoshade.party/api/queens/${song.queens[0].id}`
+  const res1 = await axios.get(imgcall1)
+
+  const imgcall2 = `http://www.nokeynoshade.party/api/queens/${song.queens[1].id}`
+  const res2 = await axios.get(imgcall2)
+
+  // console.log(res1, res2)
+  
   question.innerHTML = `
-      <p class= 'queen-info'>${song.name} by ${song.artist}</p>
+      <p class= 'queen-info2'>${song.name} by ${song.artist}</p>
       `
       let queens = song.queens
       // console.log(queens)
       let queen1 = song.queens[0]
       let queen2 = song.queens[1]
       
-  
-      
-  
-  // if (queen1.won === true || queen2.won === true) {
-  //   answerButton.addEventListener('click', () => {
-  //     console.log('You are correct')
-  //   })
-
-  // }
-
-  // left.addEventListener('click', () => {
-  //   // console.log('click working! ')
-  //   // if (queen1.won === true) {
-  //   // }
-  //   setInterval(() => {element.classList.add('correct'); }, 10);
-  // })
-
-  // right.addEventListener('click', () => {
-  //   setInterval(() => { element.classList.add('wrong'); }, 10);
-  // })
-
+  let queen1img = res1.data.image_url
+  let queen2img = res2.data.image_url
   
   right.innerHTML = ` 
       <p class= 'queen-info'>${queen1.name}</p>
+      <img class= queen-img src=${queen1img}>
       `
-      // ${queen1.won}
 
   left.innerHTML = `
       <p class= 'queen-info'>${queen2.name}</p>
+      <img class= queen-img src=${queen2img}>
       `
-      // ${queen2.won}
-  
 }
+
 
 // TRYING TO FIGURE OUT THE RIGHT PLACE TO PUT EVENT LISTENERS
   left.addEventListener('click', () => {
@@ -120,120 +91,26 @@ async function nextQuestion(counter) {
 
 
 
-function clearStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remover('wrong')
-  }
-
-
 // EVENT LISTENER FOR NEXT BUTTON
 nextButton.addEventListener('click', () => {
-  // if (song.length < 20) {
+  if (counter < 19) {
     counter += 1
-  // } else {
-  //   startButton.innerText = 'Replay'
-  //   startButton.classList.remove('hide')
-  // }
+  } else {
+    startButton.innerText = 'Replay'
+    startButton.classList.remove('hide')
+    questionContainer.classList.add('hide')
+  }
+  // Catherine add box remover later
+  element.classList.remove('wrong')
+  element.classList.remove('correct')
   nextQuestion(counter)
 })
 
-// Fuction to start game & hide start button
+// Fuction to start game. hide start button, show next button, show first question
 function startGame() {
   // console.log('Started!')
     startButton.classList.add('hide')
   questionContainer.classList.remove('hide')
   nextQuestion(0)
+  nextButton.classList.remove('hide')
 }
-
-
-  
-  // function showQuestion(question) {
-  //   question.innerText = question.question
-  //   question.answers.forEach(answer => {
-  //     const button = document.createElement('button')
-  //     button.innerText = answer.text
-  //     button.classList.add('btn')
-  //     if (answer.correct) {
-  //       button.dataset.correct = answer.correct
-  //     }
-  //     button.addEventListener('click', selectAnswer)
-  //     answerButtonElement.appendChild(button)
-  
-  //   })
-  // }
-  
-  // function reset() {
-  //   clearStatusClass(document.body)
-  //   while (answerButtonsElement, firstChild) {
-  //     answerButtonsElement.removeChild
-  //     (answerButtonsElement.firstChild)
-  //   }
-  // }
-
-
-  // answerButtonsElement.forEach(button => {
-  //   button.addEventListener('click', e => {
-
-  //   })
-  // });
-  
-  // function selectAnswer(e) {
-  //   const selectedButton = e.target
-  //   const button1 = document.createElement('button')
-  //   const button2 = document.createElement('button')
-  //   right.innerHTML = button1
-  //   left.innerHTML = button2
-  //   button1.classList.add('answer-btn')
-  //   button2.classList.add('answer-btn')
-    
-    // const correct = selectedButton.dataset.correct
-    // if (selectedButton === queen1.won === true) {
-    //   setStatusClass(document.body, correct)
-    // }
-    
-  //   Array.from(answerButtonElement.children).forEach(button => {
-  //     setStatusClass(button, button.dataset.correct)
-  //   })
-    // if (song.length > 20) {
-    //   nextButton.classList.remove('hide')
-    // } esle {
-    //   startButton.innerText = 'Replay'
-    //   startButton.classList.remove('hide')
-    // }
-  
-  // }
-  
-  // function setStatusClass(element, correct) {
-  //   clearStatusClass(element)
-  //   if (correct) {
-  //     element.classList.add('correct')
-  //   } else {
-  //     element.classList.add('wrong')
-  //   }
-  // }
-  
-  // function clearStatusClass(element) {
-  //   element.classList.remove('correct')
-  //   element.classList.remover('wrong')
-  // }
-
-
-
-
-
-
-
-
-// 2nd API CALL FOR QUEENS IMGS
-// const getQueensimg = async () => {
-
-//   try {
-//     const url2 = "http://www.nokeynoshade.party/api/seasons"
-//     const res = await axios.get(url2)
-//     console.log(res.data)
-
-//   } catch (error) {
-//     console.log(`This is your error ${error}`)
-//   }
-// }
-// getQueensimg()
