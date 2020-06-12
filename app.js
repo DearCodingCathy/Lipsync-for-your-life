@@ -65,8 +65,12 @@ async function nextQuestion(counter) {
       let queen2 = song.queens[1]
       
   let queen1img = res1.data.image_url
+  // queen1img.style.width = "100%"
+  // queen1img.style.height = "200px"
   let queen2img = res2.data.image_url
-  
+  // queen2img.style.width = "100%"
+  // queen2img.style.height = "200px"
+
   right.innerHTML = ` 
       <p class= 'queen-info'>${queen1.name}</p>
       <img class= queen-img src=${queen1img}>
