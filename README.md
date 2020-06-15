@@ -2,6 +2,8 @@
 
 ## Lip Sync For Your Life!
 
+https://dearcodingcathy.github.io/Lipsync-for-your-life/
+
 ## Project Description
 
 A one player Rupauls drag race trivia game, that test the users knowledge of lip sync battles over the seasons. This game will present 20 lip sync battles that actually took place on the show, and allow the user to choose who the winner was based on their knowledge. Get it right, and get one point. Get it wrong and get 0 points. 
