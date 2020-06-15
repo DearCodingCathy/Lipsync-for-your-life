@@ -24,7 +24,7 @@ const getQueens = async () => {
   
   try {
     
-    const url = "http://www.nokeynoshade.party/api/lipsyncs"
+    const url = "https://www.nokeynoshade.party/api/lipsyncs"
     const response = await axios.get(url)
     console.log(response.data)
     queensResult = response.data
@@ -43,10 +43,10 @@ async function nextQuestion(counter) {
   let song = songs[counter]
   console.log(song)
 
-  const imgcall1 = `http://www.nokeynoshade.party/api/queens/${song.queens[0].id}`
+  const imgcall1 = `https://www.nokeynoshade.party/api/queens/${song.queens[0].id}`
   const res1 = await axios.get(imgcall1)
 
-  const imgcall2 = `http://www.nokeynoshade.party/api/queens/${song.queens[1].id}`
+  const imgcall2 = `https://www.nokeynoshade.party/api/queens/${song.queens[1].id}`
   const res2 = await axios.get(imgcall2)
 
   // console.log(res1, res2)
