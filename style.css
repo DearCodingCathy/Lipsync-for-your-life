@@ -159,6 +159,15 @@ a {
     margin-top: 20px;
     padding: 20px;
   } 
+  .btn {
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 70px;
+    color: cornsilk;
+    margin: 10px;
+    outline: none;
+    }
   .queen-info2 {
     font-size: 18px;
     padding: 10px 5px 20px 5px;
