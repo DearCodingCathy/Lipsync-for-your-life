@@ -4,12 +4,12 @@
 
 ## Project Description
 
-A one player Ru-pauls drag race trivia game, that test the users knowledge of lip sync battles over the seasons. This game will present 10 random lip sync battles that actually took place on the show, and allow the user to choose who the winner was based on their knowledge. Get it right, and get one point. Get it wrong and get 0 points. 
+A one player Rupauls drag race trivia game, that test the users knowledge of lip sync battles over the seasons. This game will present 20 lip sync battles that actually took place on the show, and allow the user to choose who the winner was based on their knowledge. Get it right, and get one point. Get it wrong and get 0 points. 
 
 ## API and Data Sample
 
 https://drag-race-api.readme.io/docs/get-all-lipsyncs
-https://drag-race-api.readme.io/docs/get-one-queens-lipsyncs
+https://drag-race-api.readme.io/docs/get-one-queen
 
 ```json
 
