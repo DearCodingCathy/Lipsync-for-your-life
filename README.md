@@ -71,7 +71,6 @@ https://wireframe.cc/pro/pp/ef62ce6d7349633
 - Add replay game functionality
 
 #### PostMVP  
-- Add game functionality
 - Record User response and keep score 
 - Use local storage to save user answers and score?
 - Multi-player functionality
@@ -103,11 +102,11 @@ https://wireframe.cc/pro/pp/ef62ce6d7349633
 | Working with 2nd API | H | 4hrs| 1.5hrs | 1.5hrs |
 | Adding All JS info and eventlisteners | H | 4hrs| 4hrs | 4hrs |
 | Display User Answers - right or wrong | H | 4hrs| 3hrs | 3hrs |
-| Advanced Css  | H | 4hrs| 3hrs | 3hrs |
-| Display End of game result & replay option | H | 4hrs| 0hrs | 0hrs |
+| Advanced CSS  | H | 4hrs| 3hrs | 3hrs |
+| Display End of game result & replay option | H | 4hrs| 1hrs | 1hrs |
 | CSS Updates| H | 4hrs| 3.5hrs | 3.5hrs |
 | Make if Fancy!! | H | 8hrs| 3hrs | 3hrs |
-| Total | H | 40hrs| 25hrs | 25hrs |
+| Total | H | 40hrs| 26hrs | 26hrs |
 
 ## Code Snippet
 This is my start game function. I am proud of this function because I was able to figure out how to show my start and end page info, without have to create an end HTML page.
